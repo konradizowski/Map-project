@@ -67,6 +67,14 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
+amcharts3@amcharts/amcharts3:
+  version "3.21.12"
+  resolved "https://codeload.github.com/amcharts/amcharts3/tar.gz/1f5df8fab8ab9c26398a47678a921ac67a6db5a4"
+
+ammap3@^3.21.12:
+  version "3.21.12"
+  resolved "https://registry.yarnpkg.com/ammap3/-/ammap3-3.21.12.tgz#7586583e57fbc07132f7aecabaa80fd75f9d372d"
+
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
