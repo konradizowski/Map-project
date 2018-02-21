@@ -50,11 +50,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 url: urlApi + event.mapObject.id
             }).done(function (response) {
                 console.log(response);
+                document.querySelector('.countryName').innerHTML = response[0].name;
+                document.querySelector('.capital').innerHTML = 'Capital: ' + response[0].capital;
+                document.querySelector('.currency').innerHTML = 'Currency: ' + response[0].currencies[0].name;
+                document.querySelector('.languages').innerHTML = 'Languages: ' + response[0].languages[0].name;
+                document.querySelector('.population').innerHTML = 'Population: ' + response[0].population;
+                document.querySelector('.flag').setAttribute('src', response[0].flag);
 
-                document.querySelector('.capital').innerHTML = 'Capital' + response[0].capital;
-                document.querySelector('.currency').innerHTML = 'Currency' + response[0].currencies[0].name;
-                document.querySelector('.languages').innerHTML = 'Languages' + response[0].languages[0].name;
-                document.querySelector('.population').innerHTML = 'Population' + response[0].population;
+                function  loadWeather() {
+                    $.ajax({
+                        url: 'http://api.openweathermap.org/data/2.5/weather?q=' + response[0].capital +'&units=metric&APPID=7d39d21c46820b70dfc1978c32f2dcf1'
+                    }).done(function (response) {
+                        console.log(response);
+                        document.querySelector('.weather').innerHTML = 'Temperature: ' + response.main.temp;
+                    }).fail(function (error) {
+                        console.log(error);
+                    })
+                } loadWeather();
 
             }).fail(function (error) {
                 console.log(error);
