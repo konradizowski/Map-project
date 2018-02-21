@@ -1,0 +1,18 @@
+body {
+    font-family: Verdana;
+    font-size: 30px !important;
+    padding: 10px;
+    background-color:#6DBDD6;
+
+}
+
+
+path {
+    fill: #118C4E;
+    stroke: #FF9009;
+    color: red;
+}
+#area-label{
+    color: red;
+}
+
