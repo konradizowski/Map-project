@@ -1,39 +1,46 @@
 body {
-    font-family: Verdana;
+    font-family: 'Cinzel', serif;
     padding: 10px;
-    background-color:#6DBDD6;
-
+    background-image: url("../images/backgroundImage.jpg");
+    background-size: cover;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 
 path {
-    fill: #118C4E;
-    stroke: #FF9009;
-    color: red;
+    fill: #BA5536;
+    stroke:  #118C4E;
 }
-#area-label{
-    color: red;
+
+path:last-child {
+    fill: #FFBB00;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
 }
 
 .countryInfo {
-   /* background-image: url("../images/backgroundImage.jpg");*/
     width: 300px;
-    background-size: auto;
-    border: 5px solid #000000;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    float: left;
+    margin-bottom: 25px;
 }
-.flagwrap {
 
-    float:left;
+.flagWrap {
+    margin-top: 25px;
 }
 
 .weather {
-    float: left;
+    margin-top: 25px;
 }
+
 img {
-    height: 150px;
+    height: auto;
     width: 250px;
+}
+
+div {
+    font-weight: 700;
+    font-size: 18px;
 }

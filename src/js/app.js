@@ -41,10 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     map.addListener("clickMapObject", function(event) {
 
+
         const selected = event.mapObject.enTitle;
         console.log(event.mapObject);
 
         const urlApi = 'https://restcountries.eu/rest/v2/alpha?codes=';
+
         function  loadData() {
             $.ajax({
                 url: urlApi + event.mapObject.id
@@ -54,15 +56,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector('.capital').innerHTML = 'Capital: ' + response[0].capital;
                 document.querySelector('.currency').innerHTML = 'Currency: ' + response[0].currencies[0].name;
                 document.querySelector('.languages').innerHTML = 'Languages: ' + response[0].languages[0].name;
-                document.querySelector('.population').innerHTML = 'Population: ' + response[0].population;
-                document.querySelector('.flag').setAttribute('src', response[0].flag);
+
+                function fnum(x) {
+                    if (isNaN(x)) return x;
+
+                    if (x < 9999) {
+                        return x;
+                    }
+
+                    if (x < 1000000) {
+                        return Math.round(x / 1000) + "K";
+                    }
+                    if (x < 10000000) {
+                        return (x / 1000000).toFixed(2) + "M";
+                    }
+
+                    if (x < 1000000000) {
+                        return (x / 1000000).toFixed(1) + "M";
+                    }
+
+                    if(x < 1000000000000) {
+                        return (x/1000000000).toFixed(2) + "B";
+                    }
+
+                }
+
+
+                    document.querySelector('.population').innerHTML = 'Population: ' + fnum(response[0].population);
+                    document.querySelector('.flag').setAttribute('src', response[0].flag);
 
                 function  loadWeather() {
                     $.ajax({
                         url: 'http://api.openweathermap.org/data/2.5/weather?q=' + response[0].capital +'&units=metric&APPID=7d39d21c46820b70dfc1978c32f2dcf1'
                     }).done(function (response) {
                         console.log(response);
-                        document.querySelector('.weather').innerHTML = 'Temperature: ' + response.main.temp;
+                        document.querySelector('.temperature').innerHTML = 'Temperature: ' + response.name + " " + response.main.temp + '&#8451';
+                        document.querySelector('.weatherState').innerHTML = 'Weather: ' + response.weather[0].description ;
+
                     }).fail(function (error) {
                         console.log(error);
                     })
@@ -73,9 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         } loadData();
         console.log(selected);
-
-    });
-
-
+        });
 
 });
+
+

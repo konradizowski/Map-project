@@ -1,21 +1,46 @@
 body {
-  font-family: Verdana;
-  font-size: 30px;
+  font-family: 'Cinzel', serif;
   padding: 10px;
+  background-image: url("../images/backgroundImage.jpg");
+  background-size: cover;
+  width: 1000px;
+  margin: 0 auto;
 }
 
-#chartdiv {
-  width: 100%;
-  height: 450px;
+
+path {
+  fill: #BA5536;
+  stroke:  #118C4E;
 }
 
-#info {
-  opacity: 0.9;
-  background: #ccc;
-  padding: 10px;
+path:last-child {
+  fill: #FFBB00;
 }
 
-#amcharts-balloon-div {
-  font-size: 30px;
+.content {
+  display: flex;
+  justify-content: space-around;
+}
 
+.countryInfo {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.flagWrap {
+  margin-top: 25px;
+}
+
+.weather {
+  margin-top: 25px;
+}
+
+img {
+  height: auto;
+  width: 250px;
+}
+
+div {
+  font-weight: 700;
+  font-size: 18px;
 }
