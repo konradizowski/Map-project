@@ -38,19 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const selected = event.mapObject.enTitle;
-        console.log(event.mapObject);
 
         const urlApi = 'https://restcountries.eu/rest/v2/alpha?codes=';
 
         function  loadData() {
+            document.querySelector(".flagWrap").style.display = "block";
             $.ajax({
                 url: urlApi + event.mapObject.id
             }).done(function (response) {
-                console.log(response);
                 document.querySelector('.countryName').innerHTML = response[0].name;
-                document.querySelector('.capital').innerHTML = 'Capital: ' + response[0].capital;
-                document.querySelector('.currency').innerHTML = 'Currency: ' + response[0].currencies[0].name;
-                document.querySelector('.languages').innerHTML = 'Languages: ' + response[0].languages[0].name;
+                document.querySelector('.capital').innerHTML = '&#127961' + ' Capital: ' + response[0].capital;
+                document.querySelector('.currency').innerHTML = '&#128177' + ' Currency: ' + response[0].currencies[0].name;
+                document.querySelector('.languages').innerHTML = '&#5842' + ' Languages: ' + response[0].languages[0].name;
 
                 function fnum(x) {
                     if (isNaN(x)) return x;
@@ -77,19 +76,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                    document.querySelector('.population').innerHTML = 'Population: ' + fnum(response[0].population);
+                    document.querySelector('.population').innerHTML = '&#9977' + ' Population: ' + fnum(response[0].population);
                     document.querySelector('.flag').setAttribute('src', response[0].flag);
 
                 function  loadWeather() {
+
                     $.ajax({
                         url: 'http://api.openweathermap.org/data/2.5/weather?q=' + response[0].capital +'&units=metric&APPID=7d39d21c46820b70dfc1978c32f2dcf1'
                     }).done(function (response) {
-                        console.log(response);
                         document.querySelector('.capitalName').innerHTML = response.name;
-                        document.querySelector('.temperature').innerHTML = 'Temperature: ' + response.main.temp.toFixed(1) + '&#8451';
-                        document.querySelector('.weatherState').innerHTML = 'Weather: ' + response.weather[0].description ;
-                        document.querySelector('.humidity').innerHTML = 'Humidity: ' + response.main.humidity + '&#37' ;
-                        document.querySelector('.overcast').innerHTML = 'Overcast: ' + response.clouds.all + '&#37' ;
+                        document.querySelector('.temperature').innerHTML = '&#127777' + ' Temperature: ' + response.main.temp.toFixed(1) + '&#8451';
+                        document.querySelector('.weatherState').innerHTML = '&#127774' + ' Weather: ' + response.weather[0].description ;
+                        document.querySelector('.humidity').innerHTML = '&#9926' + ' Humidity: ' + response.main.humidity + '&#37' ;
+                        document.querySelector('.overcast').innerHTML = '&#9729' + ' Overcast: ' + response.clouds.all + '&#37' ;
 
                     }).fail(function (error) {
                         console.log(error);
@@ -100,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(error);
             })
         } loadData();
-        console.log(selected);
         });
 
 });

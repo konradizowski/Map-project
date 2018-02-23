@@ -26,13 +26,15 @@ h1 {
     justify-content: space-around;
 }
 
+
 .countryInfo {
-    width: 300px;
+    width: 350px;
     margin-bottom: 25px;
 }
 
 .flagWrap {
     margin-top: 25px;
+    display: none;
 }
 
 img {
