@@ -4,11 +4,9 @@ require('../css/style.css');
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
     const map = AmCharts.makeChart( "mapdiv", {
         "type": "map",
-
-
+        
         /**
          * create data provider object
          * map property is usually the same as the name of the map file.
@@ -19,9 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
          */
         "dataProvider": {
             "map": "worldLow",
-            "getAreasFromMap": true,
-            "fill": '#A2C5A3'
-
+            "getAreasFromMap": true
 
         },
 
@@ -31,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
          * selectedColor indicates color of the clicked area.
          */
         "areasSettings": {
-            "autoZoom": true,
-            "selectedColor": "#CC0033"
+            "autoZoom": true
         },
 
         "smallMap": {}
@@ -90,8 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         url: 'http://api.openweathermap.org/data/2.5/weather?q=' + response[0].capital +'&units=metric&APPID=7d39d21c46820b70dfc1978c32f2dcf1'
                     }).done(function (response) {
                         console.log(response);
-                        document.querySelector('.temperature').innerHTML = 'Temperature: ' + response.name + " " + response.main.temp + '&#8451';
+                        document.querySelector('.capitalName').innerHTML = response.name;
+                        document.querySelector('.temperature').innerHTML = 'Temperature: ' + response.main.temp.toFixed(1) + '&#8451';
                         document.querySelector('.weatherState').innerHTML = 'Weather: ' + response.weather[0].description ;
+                        document.querySelector('.humidity').innerHTML = 'Humidity: ' + response.main.humidity + '&#37' ;
+                        document.querySelector('.overcast').innerHTML = 'Overcast: ' + response.clouds.all + '&#37' ;
 
                     }).fail(function (error) {
                         console.log(error);

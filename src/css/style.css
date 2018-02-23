@@ -10,11 +10,15 @@ body {
 
 path {
     fill: #BA5536;
-    stroke:  #118C4E;
+    stroke: #A43810;
 }
 
 path:last-child {
     fill: #FFBB00;
+}
+
+h1 {
+    color:#BA5536
 }
 
 .content {
@@ -31,13 +35,9 @@ path:last-child {
     margin-top: 25px;
 }
 
-.weather {
-    margin-top: 25px;
-}
-
 img {
-    height: auto;
-    width: 250px;
+    height: 170px;
+    width: 300px;
 }
 
 div {
