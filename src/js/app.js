@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     map.addListener("clickMapObject", function(event) {
 
-
-        const selected = event.mapObject.enTitle;
-
         const urlApi = 'https://restcountries.eu/rest/v2/alpha?codes=';
 
         function  loadData() {

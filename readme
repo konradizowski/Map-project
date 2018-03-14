@@ -1,0 +1,8 @@
+Projekt zaliczeniowy na koniec kursu front-end Developer:React prowadzonego w szkole Coders Lab.
+
+Aplikacja  s ł u żą ca do wyszukiwania podstawowych
+informacji o dowolnym kraju, pobieranych metod ą AJAX.
+Do funkcjonalno ś ci projektu nale żą : interaktywna mapa w
+formacie SVG oraz rozwijana lista z informacjami
+pobieranego dwóch Api. Wykorzystane technologie: HTML,
+CSS, Sass, JavaScript, Ajax, SVG
